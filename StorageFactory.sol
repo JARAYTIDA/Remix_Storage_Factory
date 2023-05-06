@@ -13,6 +13,10 @@ contract StorageFactory{
     }
 
     function sfStore(uint256 _index, uint256 _favNumber) public {
+        // if simple SimpleStorage[] would be address[] then we couldn't write
+        // SimpleStorage simpleStorage = simpleStorageArray[_index];
+        // we would write
+        // SimpleStorage simpleStorage = SimpleStorage(simpleStorageArray[_index]);
         simpleStorageArray[_index].store(_favNumber);
     }
 
